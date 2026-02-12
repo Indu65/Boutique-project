@@ -1,0 +1,40 @@
+{
+    "kind": "collectionType",
+    "collectionName": "notifications",
+    "info": {
+        "singularName": "notification",
+        "pluralName": "notifications",
+        "displayName": "Notification",
+        "description": "User notifications for order updates and system messages"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "message": {
+            "type": "string",
+            "required": true
+        },
+        "userId": {
+            "type": "string",
+            "required": true
+        },
+        "type": {
+            "type": "enumeration",
+            "enum": [
+                "order_status",
+                "system",
+                "promotion"
+            ],
+            "default": "order_status"
+        },
+        "read": {
+            "type": "boolean",
+            "default": false
+        },
+        "relatedOrderId": {
+            "type": "string"
+        }
+    }
+}
