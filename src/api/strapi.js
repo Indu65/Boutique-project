@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const STRAPI_URL = import.meta.env.VITE_API_URL || import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337';
+const rawUrl = import.meta.env.VITE_API_URL || import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337';
+const STRAPI_URL = rawUrl.replace(/\/admin\/?$/, ''); // Remove /admin or /admin/ from the end
 console.log("Strapi API URL:", STRAPI_URL); // Debugging log
 const API_URL = `${STRAPI_URL}/api`;
 
